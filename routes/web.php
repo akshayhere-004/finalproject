@@ -18,8 +18,8 @@ Route::get('/email/verify', function () {
 })->middleware('auth')->name('verification.notice');
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->middleware('auth');
 Route::get('/sendmail', [App\Http\Controllers\HomeController::class, 'sendmail']);
 
 
